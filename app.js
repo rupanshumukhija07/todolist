@@ -108,7 +108,7 @@ app.post("/delete",function(req,res){
           res.redirect("/");}
     });
   }
-  else{
+  else{                   //finding the deleted item in other than Today tab.
     List.findOneAndUpdate({name:listname},{$pull:{list:{_id:delItemId}}},function(err,foundlist){
         if(!err)
         {res.redirect("/"+ listname);}
@@ -149,6 +149,11 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(3000, function() {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function() {
   console.log("Server started on port 3000");
 });
