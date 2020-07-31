@@ -7,7 +7,7 @@ const _ =require("lodash");
 
 const app = express();
 
-mongoose.connect("mongodb+srv://admin-rupanshu:test123@cluster0.buypr.mongodb.net/todolistDB?retryWrites=true&w=majority/todolistDB", { useNewUrlParser: true, useUnifiedTopology: true } );//connection
+mongoose.connect("mongodb+srv://admin-rupanshu:test123@cluster0.buypr.mongodb.net/todolistDB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true } );//connection
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
